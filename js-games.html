@@ -1,0 +1,27 @@
+<dochtml>
+<head>JS games</head>
+<style>
+#MyDiv1 {
+  width: 100px;
+  height: 100px;
+  }
+#MyDiv2 {
+  width:100px;
+  height:100px;
+
+}
+</style>
+<script>
+function Changecolor(){
+  document.getElementById('MyDiv1').style.background = document.getElementById("MyDiv2").style.background;
+}
+
+</script>
+<body>
+<button onclick = "Changecolor()">StartGame</button><br>
+<div id = "MyDiv1" style = "background-color: blue">blue</div><br>
+<div id ="MyDiv2" style = "background-color:pink">pink</div>
+<!-- <p>score:{}</p>
+<p>time</p> -->
+</body>
+</html>

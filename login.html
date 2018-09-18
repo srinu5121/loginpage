@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Login and Registration form</title>
+	<link rel="stylesheet" href="loginstyle.css">
+</head>
+<script>
+	function Myfunction(){
+		document.getElementById('demo1').style.display = "block";
+		document.getElementById('demo2').style.display = "none";
+	}
+	function Myfunction1(){
+		document.getElementById('demo1').style.display = "none";
+		document.getElementById('demo2').style.display = "block";
+	}
+	var students = [{name:"nirosha", password:"password" }, {name:"madhuri", password:"password"}, {name:"hari", password:"password"}];
+var create = {};
+	function create1() {
+		create.name = document.getElementById('name').value;
+		create.password = document.getElementById('password').value;
+		create.email = document.getElementById('Email').value;
+	 return create;
+	}
+	students.push(create);
+	function Run(){
+  var input = document.getElementById("nameValue").value;
+    var input1 = document.getElementById("passValue").value;
+		for(i=0;i<students.length;i++){
+		if(students[i].name == input && students[i].password == input1){
+			window.open("https://tranquil-temple-53096.herokuapp.com/")
+		}else {
+			console.log("error")
+		}
+ }
+ console.log(students)
+}
+</script>
+<style>
+body{
+	background-image: linear-gradient(rgba(0,0,0,0.6),rgba(0,0,0,0.6)),url(background.jpg);
+	height: 100vh;
+	 background-size: cover;
+	 background-position: center;
+}
+
+.login-page{
+	width: 300px;
+	padding: 10% 0 0;
+	margin: auto;
+}
+
+.form{
+	background-color: #7D726F;
+	max-width: 360px;
+	margin: auto;
+	padding: 25px;
+	position: center;
+	text-align: center;
+}
+
+.form input{
+	font-family: sans-serif;
+	background-color: #f2f2f2;
+	width: 100%;
+	outline: 1;
+	margin: 0 0 15px;
+	padding: 15px;
+	box-sizing: border-box;
+	font-size: 12px;
+}
+.form button{
+	font-family: sans-serif;
+	text-transform: uppercase;
+	outline: 0;
+	background-color: #0000ff;
+	width: 100%;
+	border: 0;
+	padding: 15px;
+	color: #FFFFFF;
+	font-size: 14px;
+	cursor: pointer;
+}
+
+.form button:hover{
+	background-color: #E8140D;
+}
+
+.form .message{
+	font-size: 12px;
+}
+
+.form .register-form{
+	display: none;
+}
+</style>
+<body>
+	<div class="login-page">
+	<div class="form">
+	     <form class="register-form" id = 'demo1'>
+	     	<input type="text" placeholder="name" id= "name"/>
+            <input type="text" placeholder="password" id ='password'/>
+            <input type="text" placeholder="email id" id ='Email'/>
+            <button onclick = "create1()">Create</button>
+
+            <p class="message">Already registered? <a href="#" onclick = "Myfunction1()">Login</a></p>
+	     </form>
+
+	     <form class="login-form" id = "demo2">
+	     <input type="text" placeholder="user name" id = 'nameValue'/>
+	     <input type="password" placeholder="password" id = "passValue"/>
+	     <button onclick = "Run()">login</button>
+	     </form>
+             <p class="message">Not Registered? <a href="#" onclick = "Myfunction()">Register</a></p>
+	</div>
+</div>
+
+</body>
+</html>
